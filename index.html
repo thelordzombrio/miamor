@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi girasol Favorita</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #FFF7E1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Cuadro flotante del mensaje */
+        #mensaje {
+            font-size: 1.5rem;
+            color: #4D3A00;
+            background-color: #FFFDE7;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 2;
+            max-width: 90%;
+            width: 400px;
+            animation: flotarCuadro 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        /* Animación del cuadro flotante */
+        @keyframes flotarCuadro {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Girasoles flotando */
+        .girasol-icono {
+            position: absolute;
+            font-size: 2rem;
+            animation: flotarGirasol 5s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        /* Animación de los girasoles flotando */
+        @keyframes flotarGirasol {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(20px, -20px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Posiciones y duraciones aleatorias para los girasoles */
+        .girasol-icono:nth-child(2) { top: 10%; left: 5%; animation-duration: 6s; }
+        .girasol-icono:nth-child(3) { top: 20%; left: 85%; animation-duration: 7s; }
+        .girasol-icono:nth-child(4) { top: 30%; left: 50%; animation-duration: 8s; }
+        .girasol-icono:nth-child(5) { top: 50%; left: 15%; animation-duration: 6s; }
+        .girasol-icono:nth-child(6) { top: 60%; left: 75%; animation-duration: 7s; }
+        .girasol-icono:nth-child(7) { top: 80%; left: 35%; animation-duration: 9s; }
+        .girasol-icono:nth-child(8) { top: 90%; left: 55%; animation-duration: 8s; }
+        .girasol-icono:nth-child(9) { top: 40%; left: 25%; animation-duration: 10s; }
+        .girasol-icono:nth-child(10) { top: 70%; left: 90%; animation-duration: 6s; }
+        .girasol-icono:nth-child(11) { top: 15%; left: 45%; animation-duration: 7s; }
+        .girasol-icono:nth-child(12) { top: 5%; left: 15%; animation-duration: 6s; }
+        .girasol-icono:nth-child(13) { top: 25%; left: 95%; animation-duration: 7s; }
+        .girasol-icono:nth-child(14) { top: 35%; left: 10%; animation-duration: 8s; }
+        .girasol-icono:nth-child(15) { top: 55%; left: 70%; animation-duration: 6s; }
+        .girasol-icono:nth-child(16) { top: 75%; left: 30%; animation-duration: 7s; }
+        .girasol-icono:nth-child(17) { top: 85%; left: 80%; animation-duration: 9s; }
+        .girasol-icono:nth-child(18) { top: 95%; left: 20%; animation-duration: 8s; }
+        .girasol-icono:nth-child(19) { top: 45%; left: 60%; animation-duration: 10s; }
+        .girasol-icono:nth-child(20) { top: 65%; left: 40%; animation-duration: 6s; }
+        .girasol-icono:nth-child(21) { top: 35%; left: 85%; animation-duration: 7s; }
+        .girasol-icono:nth-child(22) { top: 50%; left: 50%; animation-duration: 8s; }
+        .girasol-icono:nth-child(23) { top: 10%; left: 90%; animation-duration: 6s; }
+        .girasol-icono:nth-child(24) { top: 20%; left: 40%; animation-duration: 7s; }
+        .girasol-icono:nth-child(25) { top: 30%; left: 70%; animation-duration: 8s; }
+        .girasol-icono:nth-child(26) { top: 40%; left: 35%; animation-duration: 6s; }
+        .girasol-icono:nth-child(27) { top: 60%; left: 10%; animation-duration: 7s; }
+        .girasol-icono:nth-child(28) { top: 70%; left: 25%; animation-duration: 9s; }
+        .girasol-icono:nth-child(29) { top: 80%; left: 75%; animation-duration: 8s; }
+        .girasol-icono:nth-child(30) { top: 90%; left: 45%; animation-duration: 10s; }
+        .girasol-icono:nth-child(31) { top: 95%; left: 5%; animation-duration: 6s; }
+        .girasol-icono:nth-child(32) { top: 15%; left: 25%; animation-duration: 7s; }
+        .girasol-icono:nth-child(33) { top: 25%; left: 60%; animation-duration: 8s; }
+        .girasol-icono:nth-child(34) { top: 35%; left: 80%; animation-duration: 6s; }
+        .girasol-icono:nth-child(35) { top: 45%; left: 90%; animation-duration: 7s; }
+        .girasol-icono:nth-child(36) { top: 55%; left: 25%; animation-duration: 8s; }
+        .girasol-icono:nth-child(37) { top: 65%; left: 65%; animation-duration: 6s; }
+        .girasol-icono:nth-child(38) { top: 75%; left: 85%; animation-duration: 7s; }
+        .girasol-icono:nth-child(39) { top: 85%; left: 15%; animation-duration: 9s; }
+        .girasol-icono:nth-child(40) { top: 10%; left: 75%; animation-duration: 8s; }
+
+        /* Animación de crecimiento de la palabra Yhon */
+        #yhon {
+            position: absolute;
+            color: rgba(255, 165, 0, 0.1); /* Naranja semi-transparente */
+            font-size: 50px;
+            font-weight: bold;
+            z-index: 1;
+            animation: aumentarTamaño 10s infinite linear;
+            pointer-events: none; /* Evita que interfiera con la interacción */
+        }
+
+        /* Animación del tamaño de Yhon */
+        @keyframes aumentarTamaño {
+            0% {
+                font-size: 50px;
+                opacity: 1;
+            }
+            100% {
+                font-size: 3000px;
+                opacity: 0;
+            }
+        }
+
+        /* Diseño adaptable para pantallas pequeñas */
+        @media (max-width: 600px) {
+            #mensaje {
+                font-size: 1.2rem;
+                padding: 15px;
+                width: 90%;
+            }
+            .girasol-icono {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cuadro flotante con el mensaje -->
+    <div id="mensaje">
+        🌻 Para mi querida Shayna 🌻<br>
+       <br>
+       En este Día de las Flores Amarillas, <br>
+       quiero recordarte lo mucho que iluminas mi vida, <br>
+       igual que un girasol sigue la luz del sol. <br>
+       Eres mi sol en los días nublados, <br>
+       mi refugio y mi alegría constante. <br>
+       Así como los girasoles se elevan con orgullo hacia el cielo, <br>
+       mi amor por ti crece cada día más fuerte y más alto.<br>
+
+       Gracias por ser esa luz que ilumina mi camino <br>
+       y por hacer de cada momento a tu lado 
+       un campo lleno de colores y sonrisas. <br>
+       ¡Te amo infinitamente!<br>
+
+    </div>
+
+    <!-- Palabra "Yhon" que crece constantemente -->
+    <div id="yhon">Yhon</div>
+
+    <!-- Girasoles animados de fondo (usando icono 🌻) -->
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+    <div class="girasol-icono">🌻</div>
+
+</body>
+</html>
